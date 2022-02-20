@@ -6,11 +6,11 @@ exports.handler = async function http(req) {
   let d = ('0' + today.getDate()).slice(-2)
   let m = ('0' + today.getMonth()).slice(-2)
   let y = ('' + today.getFullYear()).slice(-2)
-  let secret = '';
+  let secret = 'bbef7ec9e2';
   
   let shasum = crypto.createHash('sha1')
   shasum.update(d + m + y + secret)
-  let res = shasum.digest('hex')
+  let res = shasum.digest('hex') + today.toString()y;
 
   return {
     headers: {
