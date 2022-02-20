@@ -2,7 +2,8 @@ const crypto = require('crypto')
 
 exports.handler = async function http(req) {
   
-  let today = new Date()
+  let today_ = new Date()
+  let today = new Date(today_.getTime() + 10800000)
   let d = ('0' + today.getDate()).slice(-2)
   let m = ('0' + today.getMonth()).slice(-2)
   let y = ('' + today.getFullYear()).slice(-2)
