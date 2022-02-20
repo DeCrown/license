@@ -10,7 +10,7 @@ exports.handler = async function http(req) {
   
   let shasum = crypto.createHash('sha1')
   shasum.update(d + m + y + secret)
-  let res = shasum.digest('hex') + today.toString()y;
+  let res = shasum.digest('hex') + today.toString();
 
   return {
     headers: {
