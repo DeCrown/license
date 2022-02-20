@@ -1,8 +1,16 @@
-
+const crypto = require('crypto')
 
 exports.handler = async function http(req) {
   
-  let res = 'heeloo'
+  let today = new Date()
+  let d = ('0' + today.getDate()).slice(-2)
+  let m = ('0' + today.getMonth()).slice(-2)
+  let y = ('' + today.getFullYear()).slice(-2)
+  let secret = '';
+  
+  let shasum = crypto.createHash('sha1')
+  shasum.update(d + m + y + secret)
+  let res = shasum.digest('hex')
 
   return {
     headers: {
