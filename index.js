@@ -1,15 +1,8 @@
-var crypto = require('crypto')
-var shasum = crypto.createHash('sha1')
+
 
 exports.handler = async function http(req) {
   
-  let today = new Date()
-  let d = ('0' + today.getDate()).slice(-2)
-  let m = ('0' + today.getMonth()).slice(-2)
-  let y = ('' + today.getFullYear()).slice(-2)
-  
-  shasum.update(d + m + y)
-  let res = shasum.digest('hex')
+  let res = 'heeloo'
 
   return {
     headers: {
